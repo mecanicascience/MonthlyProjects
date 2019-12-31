@@ -1,2 +1,2 @@
 # MonthlyProjects
-Liste des projets mensuels du blog.
+Animations des projets mensuels du blog.
