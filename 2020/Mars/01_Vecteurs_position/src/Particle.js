@@ -5,7 +5,7 @@ class Particle {
 
         // couleur du vecteur de la particule
         this.pos.pos.color = "#bfbcbc";
-        this.pos.textPadding = 1.2;
+        this.pos.textPadding = 0.9;
     }
 
     update(dt, everyObjects) { }
