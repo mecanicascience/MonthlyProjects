@@ -10,7 +10,7 @@ function runSimulator(simulator) {
 			engineConf.plotter.displayGrid = false; // affichage du quadriage
 		})
 		// ajout d'objets
-		.addObjects(Particle, 1, 0, 0, 'O')
+		.addObjects(Particle, 1, 0, 0, 'O') // origine du repère
 		.addObjects(Particle, 1, ["_RUN_F", random, -8, 8], ["_RUN_F", random, -8, 8], 'M1', 'r1')
 		.addObjects(Particle, 1, ["_RUN_F", random, -8, 8], ["_RUN_F", random, -8, 8], 'M2', 'r2')
 		.addObjects(Particle, 1, ["_RUN_F", random, -8, 8], ["_RUN_F", random, -8, 8], 'M3', 'r3')
