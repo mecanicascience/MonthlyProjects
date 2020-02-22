@@ -28,12 +28,13 @@ class NBody {
             // accélération pour chaque corps
             let vectDirection = Vector.sub(this.pos , everyObjects[i].pos);
             let distance      = Vector.dist(this.pos, everyObjects[i].pos);
-            // distance minimum entre les corps (pour éviter les vitesses infinies)
-            if(distance < 10e3)
-                distance = 10e3;
 
+            // distance minimum entre les corps (pour éviter les vitesses infinies)
             this.acc.add(vectDirection).mult(-G * everyObjects[i].mass).div(distance ** 3)
         }
+
+        // pour éviter les trop grandes accélérations
+        this.acc.limit(-10e6, 10e6);
     }
 
 
