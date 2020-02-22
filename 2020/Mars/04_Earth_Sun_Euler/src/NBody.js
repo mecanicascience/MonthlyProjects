@@ -36,11 +36,16 @@ class NBody {
 
     /** Appelé 60 fois/seconde */
     draw(drawer) {
-        let v = Vector.mult(this.vel, 1000000);
-        v.color = "white";
-        v.draw(this.pos);
+        let r = 15;
 
-        let r = Math.log(this.mass / 100) / 10;
+        if(Math.abs(this.pos.x) > 10**8) {
+            let v = Vector.mult(this.vel, 1000000);
+            v.color = [this.color[0] - 150, this.color[1] - 150, this.color[2] - 150];
+            v.draw(this.pos);
+
+            r = 5;
+        }
+
         drawer
             .noStroke()
             .fill(this.color[0], this.color[1], this.color[2])
