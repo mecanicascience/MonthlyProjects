@@ -1,8 +1,8 @@
 function runSimulator(simulator) {
 	simulator
 		.setEngineConfig((engineConf) => {
-			engineConf.plotter.scale = { x: 3*10e10, y: 3*10e10 };
-			engineConf.runner.simulationSpeed = 5 * 10e4;
+			engineConf.plotter.scale = { x: 3*10e11, y: 3*10e11 };
+			engineConf.runner.simulationSpeed = 5 * 10e5;
 
 			engineConf.plotter.displayGrid = false;
 		})

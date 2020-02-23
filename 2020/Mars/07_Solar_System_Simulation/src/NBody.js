@@ -47,28 +47,24 @@ class NBody {
 
     /** Appelé 60 fois/seconde */
     draw(drawer) {
-        let r = 15;
+        let r = 12;
 
         drawer
             .noFill()
             .stroke(this.color[0], this.color[1], this.color[2]);
 
         if(this.name != "Soleil") {
-            r = 5;
-
-            // Affichage du vecteur vitesse
-            let v = Vector.mult(this.vel, 1000000);
-            v.color = [this.color[0] - 150, this.color[1] - 150, this.color[2] - 150];
-            v.draw(this.pos);
+            r = 6;
 
             // Affichage des orbites
-            // this.path[this.path.length] = [this.pos.x, this.pos.y];
-            //
-            // for (let i = 1; i < this.path.length; i++)
-            //     drawer.line(this.path[i - 1][0], this.path[i - 1][1], this.path[i][0], this.path[i][1]);
-            //
-            // if(this.path.length > 160)
-            //     this.path.shift();
+            if((new Date()).getTime() % 1 == 0)
+                this.path[this.path.length] = [this.pos.x, this.pos.y];
+
+            for (let i = 1; i < this.path.length; i++)
+                drawer.line(this.path[i - 1][0], this.path[i - 1][1], this.path[i][0], this.path[i][1]);
+
+            if(this.path.length > 230)
+                this.path.shift();
         }
 
         drawer
