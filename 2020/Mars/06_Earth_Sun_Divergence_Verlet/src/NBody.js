@@ -1,6 +1,6 @@
 class NBody {
     /** Appelé à la création de l'objet */
-    constructor(mass, x0, y0, vx0, vy0, color) {
+    constructor(mass, x0, y0, vx0, vy0, color, name) {
         this.mass = mass;                  // masse de l'objet
         this.pos = new Vector(x0, y0);     // position initiale de l'objet
         this.vel = new Vector(vx0, vy0);   // vitesse initiale de l'objet
@@ -9,6 +9,7 @@ class NBody {
         this.color = color;
 
         this.path = [];
+        this.name = name;
     }
 
 
@@ -52,7 +53,7 @@ class NBody {
             .noFill()
             .stroke(this.color[0], this.color[1], this.color[2]);
 
-        if(Math.abs(this.pos.x) > 10**8) {
+        if(this.name == "Terre") {
             r = 5;
 
             // Affichage du vecteur vitesse
