@@ -13,7 +13,7 @@ class Plotter {
 
         this.topText = new pSText(
             nb + ' personnes ont participé à ce sondage',
-            new Vector(-0.5, _pSimulationInstance.config.engine.plotter.scale.y - 0.5),
+            new Vector(-0.5, _pSimulationInstance.config.engine.plotter.scale.y - 0.8),
             35,
             'white'
         );
