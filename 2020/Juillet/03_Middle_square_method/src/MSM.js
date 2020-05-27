@@ -60,9 +60,9 @@ class MSM {
 		if(this.step == 6) { // Draw square result
 			this.animations[3].start();
 
-			this.targetNumber = this.currentNumber ** 2;
+			this.targetNumber = parseInt(this.currentNumber) ** 2;
 			if((this.targetNumber + '').split('').length % 2 == 1)
-				this.targetNumber *= 10;
+				this.targetNumber = '0' + this.targetNumber;
 
 			document.getElementById('nb-shown-bis').style     = 'opacity: 0;';
 			document.getElementById('nb-shown-bis').innerHTML = this.targetNumber;
