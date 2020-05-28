@@ -125,5 +125,7 @@ class MSMT {
 					)
 				);
 		}
+
+		this.bubbleNumber[this.bubbleNumber.length - 1].isFinal = true;
 	}
 }

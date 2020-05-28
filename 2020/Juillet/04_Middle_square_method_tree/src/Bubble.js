@@ -1,5 +1,5 @@
 class Bubble {
-    constructor(x, y, number, isInitial = false) {
+    constructor(x, y, number, isInitial = false, isFinal = false) {
         this.initialPos = new Vector(x, y);
 
         this.pos = this.initialPos.copy();
@@ -11,6 +11,7 @@ class Bubble {
         this.number = new pSText(number >= 10 ? number : '0' + number, (this.pos.copy()).sub(0, 0), 28, 'black');
 
         this.isInitial = isInitial;
+        this.isFinal   = isFinal;
     }
 
     update(dt, cursorPos) {
@@ -37,7 +38,7 @@ class Bubble {
 
     draw(drawer) {
         drawer
-            .fill(this.isInitial ? 'rgba(20, 150, 20, 1)' : 'rgba(120, 120, 120, 1)')
+            .fill(this.isInitial ? 'rgba(20, 150, 20, 1)' : (this.isFinal ? 'rgba(150, 20, 20, 1)' : 'rgba(120, 120, 120, 1)'))
             .stroke('white')
             .strokeWeight(2)
             .ellipse(this.pos.x, this.pos.y, 40, 40)
