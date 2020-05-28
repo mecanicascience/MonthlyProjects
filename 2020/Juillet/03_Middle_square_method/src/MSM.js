@@ -61,7 +61,11 @@ class MSM {
 			this.animations[3].start();
 
 			this.targetNumber = parseInt(this.currentNumber) ** 2;
-			if((this.targetNumber + '').split('').length % 2 == 1)
+			if((this.targetNumber + '').split('').length == 1)
+				this.targetNumber = '0' + this.targetNumber;
+			if((this.targetNumber + '').split('').length == 2)
+				this.targetNumber = '0' + this.targetNumber;
+			if((this.targetNumber + '').split('').length == 3)
 				this.targetNumber = '0' + this.targetNumber;
 
 			document.getElementById('nb-shown-bis').style     = 'opacity: 0;';
