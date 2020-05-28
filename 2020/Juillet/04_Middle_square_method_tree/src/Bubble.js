@@ -3,8 +3,9 @@ class Bubble {
         this.initialPos = new Vector(x, y);
 
         this.pos = this.initialPos.copy();
-        //this.pos.add(2, 2);
-        this.vel = new Vector(0.1, 0);
+        this.pos.add((random() * 2 - 1) * 1, (random() * 2 - 1) * 1);
+        this.vel = new Vector(0, 0);
+        this.vel.add((random() * 2 - 1) * 3, (random() * 2 - 1) * 3);
         this.acc = new Vector(0, 0);
 
         this.number = new pSText(number >= 10 ? number : '0' + number, (this.pos.copy()).sub(0, 0), 28, 'black');
