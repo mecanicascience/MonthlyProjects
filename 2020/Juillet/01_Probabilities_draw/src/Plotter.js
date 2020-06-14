@@ -6,15 +6,15 @@ class Plotter {
 
         let nb = 0;
         for (let i = 0; i < this.votesList.length; i++) {
-            this.texts[i]       = new pSText('', new Vector(i - 5.2, 0.5), 25, 'white');
-            this.textsBottom[i] = new pSText(i + '', new Vector(i - 5.2, -6.5), 33, 'black');
+            this.texts[i]       = new pSText(this.votesList[i] + '', new Vector(i - 5.2, 0.5), 2, 'white');
+            this.textsBottom[i] = new pSText(i + '', new Vector(i - 5.2, -6.5), 3, 'black');
             nb += this.votesList[i];
         }
 
         this.topText = new pSText(
-            nb + ' personnes ont participé à ce sondage',
+            nb + '\\text{ personnes ont participé à ce sondage}',
             new Vector(-0.5, _pSimulationInstance.config.engine.plotter.scale.y - 0.8),
-            35,
+            3,
             'white'
         );
 
@@ -52,10 +52,10 @@ class Plotter {
 
         for (let i = 0; i < this.votesList.length; i++) {
             let h = this.start ? this.keyVal * (this.votesList[i] / this.max) * 11 : -1;
-            if(this.keyVal == 1)
-                this.texts[i].setText(Math.round(this.votesList[i] + '') + '');
-            else
-                this.texts[i].setText(Math.round(h + '') + '');
+            // if(this.keyVal == 1)
+                // this.texts[i].setText(Math.round(this.votesList[i] + '') + '');
+            // else
+                // this.texts[i].setText(Math.round(h + '') + '');
 
             this.texts[i].pos.y = h - 6.9 + 1;
         }
