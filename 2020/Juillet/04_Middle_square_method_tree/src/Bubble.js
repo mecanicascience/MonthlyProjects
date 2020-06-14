@@ -8,7 +8,7 @@ class Bubble {
         this.vel.add((random() * 2 - 1) * 3, (random() * 2 - 1) * 3);
         this.acc = new Vector(0, 0);
 
-        this.number = new pSText(number >= 10 ? number : '0' + number, (this.pos.copy()).sub(0, 0), 28, 'black');
+        this.number = new pSText(number >= 10 ? '' + number : '0' + number, (this.pos.copy()).sub(0, 0), 2, 'white');
 
         this.isInitial = isInitial;
         this.isFinal   = isFinal;
@@ -33,7 +33,7 @@ class Bubble {
         this.vel.add(this.acc.mult(dt));
         this.pos.add((this.vel.copy()).mult(dt*dt));
 
-        this.number.setPosition(this.pos.x - 0.02, this.pos.y - 0.1);
+        this.number.setPosition(this.pos.x, this.pos.y);
     }
 
     draw(drawer) {
