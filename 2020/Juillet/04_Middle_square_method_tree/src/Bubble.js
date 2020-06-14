@@ -8,7 +8,7 @@ class Bubble {
         this.vel.add((random() * 2 - 1) * 3, (random() * 2 - 1) * 3);
         this.acc = new Vector(0, 0);
 
-        this.number = new pSText(number >= 10 ? '' + number : '0' + number, (this.pos.copy()).sub(0, 0), 2, 'white');
+        this.number = new pSText(number >= 10 ? '' + number : '0' + number, (this.pos.copy()).sub(0, 0), 1.5, 'white');
 
         this.isInitial = isInitial;
         this.isFinal   = isFinal;
@@ -39,7 +39,7 @@ class Bubble {
     draw(drawer) {
         drawer
             .fill(this.isInitial ? 'rgba(20, 150, 20, 1)' : (this.isFinal ? 'rgba(150, 20, 20, 1)' : 'rgba(120, 120, 120, 1)'))
-            .stroke('white')
+            .noStroke()
             .strokeWeight(2)
             .ellipse(this.pos.x, this.pos.y, 40, 40)
         ;
